@@ -72,6 +72,12 @@ export async function getAuthenticatedMember(locale: string): Promise<Authentica
   return data;
 }
 
+export async function logout(locale: string): Promise<never> {
+  const cookieStore = await cookies();
+  cookieStore.delete(DASHBOARD_SESSION_COOKIE);
+  redirect(`/${locale}/auth/gate`);
+}
+
 export async function loginOrRegister(
   _prevState: AuthState,
   formData: FormData

@@ -68,6 +68,7 @@
     "connectionDescription": "Encrypted channel active toward the Nexus.",
     "connectionStatus": "Nexus aligned",
     "overviewLabel": "Alpha overview",
-    "welcome": "Welcome, Pioneer"
+    "welcome": "Welcome, Pioneer",
+    "logout": "Disconnect"
   }
 }

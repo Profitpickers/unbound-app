@@ -68,6 +68,7 @@
     "connectionDescription": "قناة مشفرة نشطة باتجاه النيكسوس.",
     "connectionStatus": "النيكسوس متّزن",
     "overviewLabel": "نظرة ألفا",
-    "welcome": "مرحباً أيها الرائد"
+    "welcome": "مرحباً أيها الرائد",
+    "logout": "قطع الاتصال"
   }
 }

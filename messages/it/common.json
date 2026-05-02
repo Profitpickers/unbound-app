@@ -68,6 +68,7 @@
     "connectionDescription": "Canale cifrato attivo verso il Nexus.",
     "connectionStatus": "Nexus allineato",
     "overviewLabel": "Panoramica alpha",
-    "welcome": "Benvenuto, Pioniere"
+    "welcome": "Benvenuto, Pioniere",
+    "logout": "Disconnetti"
   }
 }

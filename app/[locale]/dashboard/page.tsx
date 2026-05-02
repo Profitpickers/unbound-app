@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { getAuthenticatedMember } from "../auth/gate/actions";
+import { getAuthenticatedMember, logout } from "../auth/gate/actions";
 
 type DashboardPageProps = {
   params: Promise<{ locale: string }>;
@@ -19,6 +19,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   const t = await getTranslations({ locale, namespace: "dashboard" });
   const member = await getAuthenticatedMember(locale);
   const liberBalance = formatLiberBalance(locale, member.liber_balance);
+  const logoutWithLocale = logout.bind(null, locale);
 
   return (
     <main
@@ -61,26 +62,59 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
               </p>
             </div>
 
-            <div
-              className="inline-flex items-center gap-3 self-start rounded-full border px-4 py-2 text-sm"
-              style={{
-                borderColor: "rgba(0,255,255,0.5)",
-                background: "rgba(0,255,255,0.08)",
-                color: "#DDFEFF",
-              }}
-              aria-label={t("connectionStatus")}
-            >
-              <span className="relative flex h-3 w-3" aria-hidden="true">
-                <span
-                  className="absolute inline-flex h-full w-full rounded-full animate-ping"
-                  style={{ backgroundColor: "rgba(0,255,255,0.7)" }}
-                />
-                <span
-                  className="relative inline-flex h-3 w-3 rounded-full"
-                  style={{ backgroundColor: "#00FFFF", boxShadow: "0 0 18px rgba(0,255,255,0.9)" }}
-                />
-              </span>
-              <span>{t("connectionStatus")}</span>
+            <div className="flex items-center gap-3 self-start">
+              {/* Badge connessione */}
+              <div
+                className="inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm"
+                style={{
+                  borderColor: "rgba(0,255,255,0.5)",
+                  background: "rgba(0,255,255,0.08)",
+                  color: "#DDFEFF",
+                }}
+                aria-label={t("connectionStatus")}
+              >
+                <span className="relative flex h-3 w-3" aria-hidden="true">
+                  <span
+                    className="absolute inline-flex h-full w-full rounded-full animate-ping"
+                    style={{ backgroundColor: "rgba(0,255,255,0.7)" }}
+                  />
+                  <span
+                    className="relative inline-flex h-3 w-3 rounded-full"
+                    style={{ backgroundColor: "#00FFFF", boxShadow: "0 0 18px rgba(0,255,255,0.9)" }}
+                  />
+                </span>
+                <span>{t("connectionStatus")}</span>
+              </div>
+
+              {/* Logout */}
+              <form action={logoutWithLocale}>
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium uppercase tracking-[0.22em] transition-colors duration-200 hover:border-gold hover:bg-gold/10"
+                  style={{
+                    borderColor: "rgba(212,175,55,0.4)",
+                    background: "rgba(212,175,55,0.06)",
+                    color: "#E9C85A",
+                  }}
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <polyline points="16 17 21 12 16 7" />
+                    <line x1="21" y1="12" x2="9" y2="12" />
+                  </svg>
+                  {t("logout")}
+                </button>
+              </form>
             </div>
           </div>
         </header>

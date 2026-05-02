@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "tagline": "The Operating System of Civilization",
+    "headline": "I AM UNBOUND.",
+    "subheadline": "The platform that transforms sovereign time into real value. Join the 144 Pioneers.",
+    "cta": "Access the Sovereign Portal",
+    "ctaSecondary": "Discover the Vision"
+  },
+  "roadmap": {
+    "sectionTitle": "Sovereign Roadmap",
+    "sectionSubtitle": "Six months to build the first free civilization. Each phase is a step toward total sovereignty.",
+    "milestone1": {
+      "label": "Month 1",
+      "title": "Configuration & Entry Gate",
+      "desc": "Setup of n8n, Supabase and Vercel. Creation of the Sovereign Access Port with Multi-Level authentication (Gauntlet).",
+      "status": "completed"
+    },
+    "milestone2": {
+      "label": "Month 2",
+      "title": "The LIBER Wallet",
+      "desc": "Creation of Supabase tables for LIBER Tokens. Coding of the base Social Mining protocol: declaration, AI validation and token assignment.",
+      "status": "inProgress"
+    },
+    "milestone3": {
+      "label": "Month 3",
+      "title": "GOD MODE & Nodes",
+      "desc": "Visualization of the Alpha Node map for the 144 Pioneers. Implementation of the Solidarity Fund management.",
+      "status": "upcoming"
+    },
+    "milestone4": {
+      "label": "Month 4",
+      "title": "The Companion AI",
+      "desc": "Integration of encrypted chat with the Companion AI (Gemini instance). Security stress test with Sentinel AI.",
+      "status": "upcoming"
+    },
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "upcoming": "Coming Soon"
+    }
+  },
+  "nav": {
+    "switchLang": "Language"
+  }
+}

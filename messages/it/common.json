@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "tagline": "Il Sistema Operativo della Civiltà",
+    "headline": "SONO SENZA CATENE.",
+    "subheadline": "La piattaforma che trasforma il tempo sovrano in valore reale. Entra a far parte dei 144 Pionieri.",
+    "cta": "Accedi al Portale Sovrano",
+    "ctaSecondary": "Scopri la Visione"
+  },
+  "roadmap": {
+    "sectionTitle": "Roadmap Sovrana",
+    "sectionSubtitle": "Sei mesi per costruire la prima civiltà libera. Ogni fase è un passo verso la sovranità totale.",
+    "milestone1": {
+      "label": "Mese 1",
+      "title": "Configurazione & Porta d'Ingresso",
+      "desc": "Setup di n8n, Supabase e Vercel. Creazione del Sovereign Access Port con autenticazione Multi-Livello (Gauntlet).",
+      "status": "completed"
+    },
+    "milestone2": {
+      "label": "Mese 2",
+      "title": "Il Wallet LIBER",
+      "desc": "Creazione delle tabelle Supabase per i Token LIBER. Codifica del protocollo di Social Mining: dichiarazione, validazione AI e assegnazione token.",
+      "status": "inProgress"
+    },
+    "milestone3": {
+      "label": "Mese 3",
+      "title": "GOD MODE & Nodi",
+      "desc": "Visualizzazione della mappa Nodi Alpha per i 144 Pionieri. Implementazione della gestione del Fondo Solidarietà.",
+      "status": "upcoming"
+    },
+    "milestone4": {
+      "label": "Mese 4",
+      "title": "The Companion AI",
+      "desc": "Integrazione della chat cifrata con il Companion AI (istanza Gemini). Stress test di sicurezza con Sentinel AI.",
+      "status": "upcoming"
+    },
+    "status": {
+      "completed": "Completato",
+      "inProgress": "In Corso",
+      "upcoming": "Prossimamente"
+    }
+  },
+  "nav": {
+    "switchLang": "Lingua"
+  }
+}

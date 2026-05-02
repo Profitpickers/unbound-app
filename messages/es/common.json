@@ -69,6 +69,19 @@
     "connectionStatus": "Nexus alineado",
     "overviewLabel": "Visión alpha",
     "welcome": "Bienvenido, Pionero",
-    "logout": "Desconectar"
+    "logout": "Desconectar",
+    "socialMining": {
+      "title": "Módulo de Social Mining",
+      "description": "Declara tu acción de valor. El Protocolo de Valor 4.0 enviará la solicitud al Oráculo para su validación.",
+      "fieldLabel": "Describe tu acción",
+      "fieldPlaceholder": "Ej. Apoyé a un miembro de la comunidad con 2 horas de mentoría y documenté los resultados.",
+      "button": "Enviar para Validación",
+      "buttonLoading": "Validación en curso...",
+      "feedbackPending": "En espera de validación del Oráculo...",
+      "feedbackValidationError": "Introduce una descripción válida (al menos 12 caracteres).",
+      "feedbackWebhookMissing": "El webhook de n8n no está configurado. Contacta al administrador.",
+      "feedbackWebhookError": "Error de transmisión al Nexus Oracle. Inténtalo de nuevo.",
+      "feedbackSubmittedAt": "Transmisión enviada"
+    }
   }
 }

@@ -69,6 +69,19 @@
     "connectionStatus": "النيكسوس متّزن",
     "overviewLabel": "نظرة ألفا",
     "welcome": "مرحباً أيها الرائد",
-    "logout": "قطع الاتصال"
+    "logout": "قطع الاتصال",
+    "socialMining": {
+      "title": "وحدة Social Mining",
+      "description": "صرّح بالفعل القيّمة التي أنجزتها. سيقوم بروتوكول القيمة 4.0 بإرسال الطلب إلى الأوراكل للتحقق.",
+      "fieldLabel": "صِف فعلك",
+      "fieldPlaceholder": "مثال: دعمت أحد أعضاء المجتمع بساعتين من الإرشاد ووثّقت النتائج.",
+      "button": "إرسال للتحقق",
+      "buttonLoading": "التحقق جارٍ...",
+      "feedbackPending": "بانتظار تحقق الأوراكل...",
+      "feedbackValidationError": "أدخل وصفاً صالحاً (12 حرفاً على الأقل).",
+      "feedbackWebhookMissing": "رابط n8n webhook غير مُعد. تواصل مع المسؤول.",
+      "feedbackWebhookError": "فشل الإرسال إلى Nexus Oracle. حاول مرة أخرى.",
+      "feedbackSubmittedAt": "تم إرسال العملية"
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import SocialMiningForm from "@/components/SocialMiningForm";
 import { getAuthenticatedMember, logout } from "../auth/gate/actions";
 
 type DashboardPageProps = {
@@ -229,6 +230,9 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
               </p>
             </div>
           </section>
+
+          {/* ── Social Mining Module ───────────────────────────────── */}
+          <SocialMiningForm userId={member.member_id} locale={locale} />
 
           {/* ── Identità Sovrana ────────────────────────────────────── */}
           <section

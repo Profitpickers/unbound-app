@@ -41,5 +41,16 @@
   },
   "nav": {
     "switchLang": "Language"
+  },
+  "auth": {
+    "title": "Access the Nexus",
+    "subtitle": "Identify your sovereign spirit",
+    "email_label": "Email",
+    "email_placeholder": "your@email.com",
+    "referral_label": "Resonance Code",
+    "referral_placeholder": "e.g. U144-VZ-070",
+    "submit": "Enter the Nexus",
+    "error_invalid": "Credentials not recognized. Verify your email and Resonance Code.",
+    "success": "Access confirmed. Welcome, Pioneer."
   }
 }

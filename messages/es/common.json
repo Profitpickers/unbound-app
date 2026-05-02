@@ -41,5 +41,16 @@
   },
   "nav": {
     "switchLang": "Idioma"
+  },
+  "auth": {
+    "title": "Acceso al Nexus",
+    "subtitle": "Identifica tu espíritu soberano",
+    "email_label": "Email",
+    "email_placeholder": "tu@email.com",
+    "referral_label": "Código de Resonancia",
+    "referral_placeholder": "ej. U144-VZ-070",
+    "submit": "Entrar al Nexus",
+    "error_invalid": "Credenciales no reconocidas. Verifica tu email y Código de Resonancia.",
+    "success": "Acceso confirmado. Bienvenido, Pionero."
   }
 }

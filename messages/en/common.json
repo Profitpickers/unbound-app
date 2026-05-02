@@ -57,7 +57,7 @@
     "eyebrow": "Throne Room",
     "title": "The Sovereign Dashboard",
     "subtitle": "Your interface to observe energy, identity and the Nexus connection.",
-    "energyTitle": "Energy Reserve",
+    "energyTitle": "Sovereign Energy Reserve",
     "energyDescription": "LIBER balance currently available in your sovereign circuit.",
     "energyUnit": "LIBER",
     "identityTitle": "Sovereign Identity",

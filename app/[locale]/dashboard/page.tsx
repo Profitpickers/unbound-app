@@ -121,44 +121,116 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
 
         <section
           aria-label={t("overviewLabel")}
-          className="grid gap-6 lg:grid-cols-[1.25fr_0.9fr_0.85fr]"
+          className="grid gap-6 lg:grid-cols-2"
         >
+          {/* ── Wallet: Riserva Energetica Sovrana ─────────────────── */}
           <section
-            className="rounded-[28px] border p-6 sm:p-8"
+            className="relative overflow-hidden rounded-[28px] border p-8 sm:p-10 lg:col-span-2"
             style={{
-              background: "rgba(255,255,255,0.045)",
-              borderColor: "rgba(212, 175, 55, 0.4)",
-              boxShadow: "0 24px 64px rgba(0,0,0,0.35)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
+              background: "rgba(0,255,255,0.025)",
+              borderColor: "rgba(0,255,255,0.38)",
+              boxShadow:
+                "0 0 0 1px rgba(0,255,255,0.07), 0 40px 100px rgba(0,0,0,0.45), inset 0 1px 0 rgba(0,255,255,0.12)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
             }}
           >
-            <p className="text-sm uppercase tracking-[0.3em]" style={{ color: "#E9C85A" }}>
-              {t("energyTitle")}
-            </p>
-            <h2 className="mt-4 text-sm leading-7" style={{ color: "rgba(255,255,255,0.88)" }}>
-              {t("energyDescription")}
-            </h2>
-
-            <div className="mt-10 flex items-end gap-4">
-              <p
-                className="text-5xl font-semibold tracking-[0.04em] sm:text-6xl"
+            {/* Aura pulsante di sfondo — radial-gradient animata */}
+            <div
+              className="pointer-events-none absolute inset-0 overflow-hidden"
+              aria-hidden="true"
+            >
+              <div
+                className="animate-pulse absolute left-1/2 top-1/2 h-[480px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full"
                 style={{
-                  color: "#E8FFFF",
-                  textShadow: "0 0 12px rgba(0,255,255,0.7), 0 0 34px rgba(0,255,255,0.3)",
+                  background:
+                    "radial-gradient(ellipse at center, rgba(0,255,255,0.22) 0%, rgba(0,255,255,0.06) 45%, transparent 72%)",
                 }}
+              />
+            </div>
+
+            <div className="relative z-10">
+              {/* Header widget */}
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p
+                    className="text-xs uppercase tracking-[0.45em]"
+                    style={{ color: "#7EFFFF" }}
+                  >
+                    {t("energyTitle")}
+                  </p>
+                  <p
+                    className="mt-2 max-w-md text-sm leading-6"
+                    style={{ color: "rgba(255,255,255,0.65)" }}
+                  >
+                    {t("energyDescription")}
+                  </p>
+                </div>
+
+                {/* Icona LIBER */}
+                <div
+                  className="flex-shrink-0 rounded-full p-3"
+                  style={{
+                    border: "1px solid rgba(0,255,255,0.35)",
+                    background: "rgba(0,255,255,0.08)",
+                  }}
+                  aria-hidden="true"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#00FFFF"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Numero saldo — monumentale */}
+              <div className="mt-8 flex flex-wrap items-end gap-x-5 gap-y-2">
+                <span
+                  className="text-7xl font-semibold leading-none tracking-[-0.01em] sm:text-8xl lg:text-9xl"
+                  style={{
+                    color: "#E8FFFF",
+                    textShadow:
+                      "0 0 18px rgba(0,255,255,0.9), 0 0 55px rgba(0,255,255,0.45), 0 0 110px rgba(0,255,255,0.18)",
+                  }}
+                >
+                  {liberBalance}
+                </span>
+                <span
+                  className="pb-3 text-base font-medium uppercase tracking-[0.5em]"
+                  style={{ color: "#7EFFFF" }}
+                >
+                  {t("energyUnit")}
+                </span>
+              </div>
+
+              {/* Separatore decorativo cyan */}
+              <div
+                className="mt-8 h-px w-full"
+                style={{
+                  background:
+                    "linear-gradient(90deg, rgba(0,255,255,0.55) 0%, rgba(0,255,255,0.12) 55%, transparent 100%)",
+                }}
+                aria-hidden="true"
+              />
+              <p
+                className="mt-4 text-xs uppercase tracking-[0.42em]"
+                style={{ color: "rgba(0,255,255,0.42)" }}
               >
-                {liberBalance}
+                LIBER · SOVEREIGN ENERGY CIRCUIT
               </p>
-              <span
-                className="pb-2 text-sm uppercase tracking-[0.4em]"
-                style={{ color: "#7EFFFF" }}
-              >
-                {t("energyUnit")}
-              </span>
             </div>
           </section>
 
+          {/* ── Identità Sovrana ────────────────────────────────────── */}
           <section
             className="rounded-[28px] border p-6 sm:p-8"
             style={{
@@ -196,6 +268,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
             </dl>
           </section>
 
+          {/* ── Stato Connessione ───────────────────────────────────── */}
           <section
             className="rounded-[28px] border p-6 sm:p-8"
             style={{
@@ -217,7 +290,8 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
               className="mt-10 rounded-3xl border px-5 py-6"
               style={{
                 borderColor: "rgba(0,255,255,0.45)",
-                background: "radial-gradient(circle at center, rgba(0,255,255,0.16) 0%, rgba(0,255,255,0.03) 58%, rgba(0,0,0,0.14) 100%)",
+                background:
+                  "radial-gradient(circle at center, rgba(0,255,255,0.16) 0%, rgba(0,255,255,0.03) 58%, rgba(0,0,0,0.14) 100%)",
               }}
             >
               <div className="flex items-center gap-4">

@@ -82,6 +82,15 @@
       "feedbackWebhookMissing": "رابط n8n webhook غير مُعد. تواصل مع المسؤول.",
       "feedbackWebhookError": "فشل الإرسال إلى Nexus Oracle. حاول مرة أخرى.",
       "feedbackSubmittedAt": "تم إرسال العملية"
+    },
+    "nodeNetwork": {
+      "title": "خريطة العقد",
+      "originNode": "العقدة الاصل",
+      "affiliatedNodes": "العقد التابعة",
+      "solidarityFund": "صندوق تضامن العقدة",
+      "passportStatus": "حالة الجواز السيادي",
+      "passportReady": "اتصال العتاد جاهز",
+      "emptySlot": "منفذ فارغ"
     }
   }
 }

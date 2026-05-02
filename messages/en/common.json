@@ -82,6 +82,15 @@
       "feedbackWebhookMissing": "n8n webhook is not configured. Contact the administrator.",
       "feedbackWebhookError": "Transmission to Nexus Oracle failed. Try again.",
       "feedbackSubmittedAt": "Transmission sent"
+    },
+    "nodeNetwork": {
+      "title": "Node Map",
+      "originNode": "Origin Node",
+      "affiliatedNodes": "Affiliated Nodes",
+      "solidarityFund": "Node Solidarity Fund",
+      "passportStatus": "Sovereign Passport Status",
+      "passportReady": "Hardware Connection Ready",
+      "emptySlot": "Open Slot"
     }
   }
 }

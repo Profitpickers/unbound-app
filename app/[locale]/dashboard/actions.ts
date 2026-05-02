@@ -13,6 +13,97 @@ export type SocialMiningState = {
   submittedAt: string | null;
 };
 
+type NodeSnapshotRow = {
+  node_id: string;
+  total_solidarity_fund: number | string | null;
+  affiliates?: unknown;
+};
+
+export type NodeNetworkSnapshot = {
+  nodeId: string;
+  totalSolidarityFund: number | string | null;
+  affiliates: string[];
+};
+
+function normalizeAffiliates(raw: unknown): string[] {
+  if (Array.isArray(raw)) {
+    return raw
+      .map((item) => {
+        if (typeof item === "string") {
+          return item.trim();
+        }
+
+        if (item && typeof item === "object") {
+          const entity = item as { member_id?: string; node_id?: string; id?: string };
+          return (entity.member_id ?? entity.node_id ?? entity.id ?? "").trim();
+        }
+
+        return "";
+      })
+      .filter(Boolean);
+  }
+
+  if (typeof raw === "string") {
+    return raw
+      .split(",")
+      .map((entry) => entry.trim())
+      .filter(Boolean);
+  }
+
+  return [];
+}
+
+export async function getNodeNetworkSnapshot(memberId: string): Promise<NodeNetworkSnapshot> {
+  const attempts = [
+    () =>
+      supabase
+        .from("nodes")
+        .select("node_id,total_solidarity_fund,affiliates")
+        .eq("origin_member_id", memberId)
+        .maybeSingle(),
+    () =>
+      supabase
+        .from("nodes")
+        .select("node_id,total_solidarity_fund,affiliates")
+        .eq("node_id", memberId)
+        .maybeSingle(),
+    () =>
+      supabase
+        .from("nodes")
+        .select("node_id,total_solidarity_fund,affiliates")
+        .limit(1)
+        .maybeSingle(),
+    () =>
+      supabase
+        .from("nodes")
+        .select("node_id,total_solidarity_fund")
+        .limit(1)
+        .maybeSingle(),
+  ];
+
+  for (const attempt of attempts) {
+    const { data, error } = await attempt();
+
+    if (error || !data) {
+      continue;
+    }
+
+    const row = data as NodeSnapshotRow;
+
+    return {
+      nodeId: row.node_id,
+      totalSolidarityFund: row.total_solidarity_fund,
+      affiliates: normalizeAffiliates(row.affiliates),
+    };
+  }
+
+  return {
+    nodeId: memberId,
+    totalSolidarityFund: 0,
+    affiliates: [],
+  };
+}
+
 export async function submitSocialMining(
   context: SubmitContext,
   _prevState: SocialMiningState,

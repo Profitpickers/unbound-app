@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
+import NodeNetworkMap from "@/components/NodeNetworkMap";
 import SocialMiningForm from "@/components/SocialMiningForm";
 import { getAuthenticatedMember, logout } from "../auth/gate/actions";
+import { getNodeNetworkSnapshot } from "./actions";
 
 type DashboardPageProps = {
   params: Promise<{ locale: string }>;
@@ -19,7 +21,9 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "dashboard" });
   const member = await getAuthenticatedMember(locale);
+  const nodeNetwork = await getNodeNetworkSnapshot(member.member_id);
   const liberBalance = formatLiberBalance(locale, member.liber_balance);
+  const solidarityFund = formatLiberBalance(locale, nodeNetwork.totalSolidarityFund);
   const logoutWithLocale = logout.bind(null, locale);
 
   return (
@@ -233,6 +237,21 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
 
           {/* ── Social Mining Module ───────────────────────────────── */}
           <SocialMiningForm userId={member.member_id} locale={locale} />
+
+          {/* ── GOD MODE: Mappa Nodi & Fondo Solidarieta ───────────── */}
+          <NodeNetworkMap
+            nodeId={nodeNetwork.nodeId}
+            solidarityFund={solidarityFund}
+            fundUnit={t("energyUnit")}
+            affiliates={nodeNetwork.affiliates}
+            title={t("nodeNetwork.title")}
+            originNodeLabel={t("nodeNetwork.originNode")}
+            affiliatedNodesLabel={t("nodeNetwork.affiliatedNodes")}
+            solidarityFundLabel={t("nodeNetwork.solidarityFund")}
+            passportStatusLabel={t("nodeNetwork.passportStatus")}
+            passportReadyLabel={t("nodeNetwork.passportReady")}
+            emptySlotLabel={t("nodeNetwork.emptySlot")}
+          />
 
           {/* ── Identità Sovrana ────────────────────────────────────── */}
           <section

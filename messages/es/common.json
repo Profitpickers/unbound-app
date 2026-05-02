@@ -82,6 +82,15 @@
       "feedbackWebhookMissing": "El webhook de n8n no está configurado. Contacta al administrador.",
       "feedbackWebhookError": "Error de transmisión al Nexus Oracle. Inténtalo de nuevo.",
       "feedbackSubmittedAt": "Transmisión enviada"
+    },
+    "nodeNetwork": {
+      "title": "Mapa de Nodos",
+      "originNode": "Nodo Origen",
+      "affiliatedNodes": "Nodos Afiliados",
+      "solidarityFund": "Fondo de Solidaridad del Nodo",
+      "passportStatus": "Estado del Pasaporte Soberano",
+      "passportReady": "Conexion de Hardware Lista",
+      "emptySlot": "Slot Libre"
     }
   }
 }

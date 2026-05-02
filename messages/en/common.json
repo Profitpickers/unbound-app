@@ -52,5 +52,22 @@
     "submit": "Enter the Nexus",
     "error_invalid": "Credentials not recognized. Verify your email and Resonance Code.",
     "success": "Access confirmed. Welcome, Pioneer."
+  },
+  "dashboard": {
+    "eyebrow": "Throne Room",
+    "title": "The Sovereign Dashboard",
+    "subtitle": "Your interface to observe energy, identity and the Nexus connection.",
+    "energyTitle": "Energy Reserve",
+    "energyDescription": "LIBER balance currently available in your sovereign circuit.",
+    "energyUnit": "LIBER",
+    "identityTitle": "Sovereign Identity",
+    "identityDescription": "Access signature verified by the Nexus.",
+    "memberId": "Member ID",
+    "role": "Role",
+    "connectionTitle": "Connection Status",
+    "connectionDescription": "Encrypted channel active toward the Nexus.",
+    "connectionStatus": "Nexus aligned",
+    "overviewLabel": "Alpha overview",
+    "welcome": "Welcome, Pioneer"
   }
 }

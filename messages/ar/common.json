@@ -52,5 +52,22 @@
     "submit": "ادخل إلى النيكسوس",
     "error_invalid": "بيانات الاعتماد غير معترف بها. تحقق من بريدك الإلكتروني ورمز الرنين.",
     "success": "تم تأكيد الوصول. مرحباً أيها الرائد."
+  },
+  "dashboard": {
+    "eyebrow": "قاعة العرش",
+    "title": "لوحة السيادة",
+    "subtitle": "واجهتك لمراقبة الطاقة والهوية والاتصال بالنيكسوس.",
+    "energyTitle": "الاحتياطي الطاقي",
+    "energyDescription": "رصيد LIBER المتاح داخل دائرتك السيادية.",
+    "energyUnit": "LIBER",
+    "identityTitle": "الهوية السيادية",
+    "identityDescription": "توقيع وصول موثّق من النيكسوس.",
+    "memberId": "معرّف العضو",
+    "role": "الدور",
+    "connectionTitle": "حالة الاتصال",
+    "connectionDescription": "قناة مشفرة نشطة باتجاه النيكسوس.",
+    "connectionStatus": "النيكسوس متّزن",
+    "overviewLabel": "نظرة ألفا",
+    "welcome": "مرحباً أيها الرائد"
   }
 }

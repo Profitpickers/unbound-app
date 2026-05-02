@@ -4,7 +4,7 @@
    Tutti i testi provengono da common.json (chiave "auth"). */
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useActionState } from "react";
 import { loginOrRegister, type AuthState } from "./actions";
 
@@ -12,6 +12,7 @@ const initialState: AuthState = { error: null };
 
 export default function GatePage() {
   const t = useTranslations("auth");
+  const locale = useLocale();
   const [state, formAction, isPending] = useActionState(loginOrRegister, initialState);
 
   return (
@@ -81,6 +82,8 @@ export default function GatePage() {
 
         {/* Form */}
         <form action={formAction} className="space-y-5" noValidate>
+          <input type="hidden" name="locale" value={locale} />
+
           {/* Campo Email */}
           <div className="space-y-1.5">
             <label

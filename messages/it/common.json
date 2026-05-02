@@ -52,5 +52,22 @@
     "submit": "Entra nel Nexus",
     "error_invalid": "Credenziali non riconosciute. Verifica email e Codice di Risonanza.",
     "success": "Accesso confermato. Benvenuto, Pioniere."
+  },
+  "dashboard": {
+    "eyebrow": "Sala del Trono",
+    "title": "La Dashboard Sovrana",
+    "subtitle": "La tua interfaccia per osservare energia, identità e connessione al Nexus.",
+    "energyTitle": "Riserva Energetica",
+    "energyDescription": "Saldo LIBER disponibile nel tuo circuito sovrano.",
+    "energyUnit": "LIBER",
+    "identityTitle": "Identità Sovrana",
+    "identityDescription": "Firma di accesso verificata dal Nexus.",
+    "memberId": "Member ID",
+    "role": "Ruolo",
+    "connectionTitle": "Stato Connessione",
+    "connectionDescription": "Canale cifrato attivo verso il Nexus.",
+    "connectionStatus": "Nexus allineato",
+    "overviewLabel": "Panoramica alpha",
+    "welcome": "Benvenuto, Pioniere"
   }
 }
